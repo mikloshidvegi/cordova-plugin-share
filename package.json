@@ -1,7 +1,7 @@
 {
   "name": "Cordova Plugin Share",
   "version": "1.0.0",
-  "description": "Cordova Plugin to open native "share" popup in Android and iOS",
+  "description": "Cordova Plugin to open native share popup in Android and iOS",
   "cordova": {
     "id": "cordova-plugin-native-share",
     "platforms": [
