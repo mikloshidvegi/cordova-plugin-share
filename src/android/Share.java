@@ -1,4 +1,4 @@
-package nl.madebymark.share;
+package cordova.plugin.share;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.content.Intent;
+import android.net.Uri;
 
     /**
      * This class echoes a string called from JavaScript.
@@ -30,13 +31,17 @@ import android.content.Intent;
           try {
             Intent sendIntent = new Intent();
             sendIntent.setAction(Intent.ACTION_SEND);
-            sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+            if (mimetype.equals("text/plain")) {
+                sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+            } else {
+                sendIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(text));
+            }
             sendIntent.setType(mimetype);
             cordova.getActivity().startActivity(Intent.createChooser(sendIntent, title));
             callbackContext.success();
             } catch(Error e) {
                 callbackContext.error(e.getMessage());
             }
-            
+
         }
     }
