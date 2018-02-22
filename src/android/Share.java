@@ -1,4 +1,4 @@
-package cordova.plugin.share;
+package com.pinkbike;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CallbackContext;
