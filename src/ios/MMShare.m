@@ -21,8 +21,7 @@
           [dataToShare addObject:text];
         } else {
           //NSLog(@"SHARE FILE!");
-          NSURL *fileUrl = [NSURL fileURLWithPath:text isDirectory:NO];
-          [dataToShare addObject:fileUrl];
+          NSURL *fileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:text] isDirectory:NO];
         }
         //NSLog(@"SHARE: %@", dataToShare);
 
