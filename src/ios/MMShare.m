@@ -22,6 +22,7 @@
         } else {
           //NSLog(@"SHARE FILE!");
           NSURL *fileUrl = [NSURL fileURLWithPath:[NSTemporaryDirectory() stringByAppendingPathComponent:text] isDirectory:NO];
+          [dataToShare addObject:fileUrl];
         }
         //NSLog(@"SHARE: %@", dataToShare);
 
