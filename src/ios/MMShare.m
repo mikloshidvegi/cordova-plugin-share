@@ -33,6 +33,10 @@
             activityViewController.popoverPresentationController.sourceView = self.webView;
         }
 
+        if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad ) {
+            [activityViewController popoverPresentationController].sourceRect=CGRectMake( 0,200,768,20);
+        }
+        
         [self.viewController presentViewController:activityViewController animated:YES completion:^{}];
     } else {
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
