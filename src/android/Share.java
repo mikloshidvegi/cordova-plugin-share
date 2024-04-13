@@ -39,7 +39,7 @@ public class Share extends CordovaPlugin {
                 sendIntent.setAction(Intent.ACTION_SEND);
                 Context context = this.cordova.getActivity().getApplicationContext();
                 Uri fileUri = FileProvider.getUriForFile(context,
-                        BuildConfig.APPLICATION_ID + ".provider",
+                        context.getPackageName() + ".provider",
                         new File(Uri.parse(text).getPath()));
                 sendIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 sendIntent.putExtra(Intent.EXTRA_STREAM, fileUri);
