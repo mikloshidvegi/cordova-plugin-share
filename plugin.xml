@@ -19,7 +19,19 @@
                 <param name="android-package" value="hu.rudaskarig.gispan.Share"/>
             </feature>
         </config-file>
+        <config-file target="AndroidManifest.xml" parent="application">
+            <provider
+                    android:name="hu.rudaskarig.gispan.FileProvider"
+                    android:authorities="${applicationId}.provider"
+                    android:exported="false"
+                    android:grantUriPermissions="true" >
+                <meta-data
+                        android:name="android.support.FILE_PROVIDER_PATHS"
+                        android:resource="@xml/share_provider_paths"/>
+            </provider>
+        </config-file>
         <source-file src="src/android/Share.java" target-dir="src/hu/rudaskarig/gispan" />
+        <source-file src="src/android/xml/share_provider_paths.xml" target-dir="res/xml" />
     </platform>
 
     <!-- ios -->
