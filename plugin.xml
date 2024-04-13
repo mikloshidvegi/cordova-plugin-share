@@ -31,6 +31,7 @@
             </provider>
         </config-file>
         <source-file src="src/android/Share.java" target-dir="src/hu/rudaskarig/gispan" />
+        <source-file src="src/android/FileProvider.java" target-dir="src/hu/rudaskarig/gispan" />
         <source-file src="src/android/xml/share_provider_paths.xml" target-dir="res/xml" />
     </platform>
 
