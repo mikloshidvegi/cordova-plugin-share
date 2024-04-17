@@ -10,7 +10,7 @@ import org.json.JSONObject;
 import android.content.Intent;
 import android.net.Uri;
 
-//import androidx.core.content.FileProvider;
+import androidx.core.content.FileProvider;
 import java.io.File;
 import android.content.Context;
 
@@ -39,12 +39,10 @@ public class Share extends CordovaPlugin {
                 sendIntent.setAction(Intent.ACTION_SEND);
                 Context context = this.cordova.getActivity().getApplicationContext();
                 Uri fileUri = FileProvider.getUriForFile(context,
-                        context.getPackageName() + ".provider",
+                        context.getPackageName() + ".shareprovider",
                         new File(Uri.parse(text).getPath()));
                 sendIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                 sendIntent.putExtra(Intent.EXTRA_STREAM, fileUri);
-
-                //context.grantUriPermission("com.garmin.android.apps.connectmobile", fileUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
             }
             sendIntent.setType(mimetype);
             cordova.getActivity().startActivity(Intent.createChooser(sendIntent, title));

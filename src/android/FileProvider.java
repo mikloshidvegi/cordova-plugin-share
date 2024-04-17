@@ -1,6 +1,6 @@
 package hu.rudaskarig.gispan;
 
-import androidx.core.R;
+import android.R;
 
 public class FileProvider extends androidx.core.content.FileProvider {
 	public FileProvider() {
